@@ -1,0 +1,11 @@
+.idea
+.gradle
+build
+out
+
+assignmentKey
+partId
+task-info.yaml
+lesson-info.yaml
+course-info.yaml
+
