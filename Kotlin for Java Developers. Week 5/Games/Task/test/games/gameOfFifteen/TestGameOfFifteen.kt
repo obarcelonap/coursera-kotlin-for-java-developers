@@ -29,7 +29,7 @@ class TestGameOfFifteen {
             game.processMove(move.direction)
             val prev = moves[index - 1].board
             Assert.assertEquals("Wrong result after pressing ${move.direction} " +
-                    "for\n$prev\n",
+                    "for\n$prev\nExpected:\n${move.board}\nActual:\n${game.asString()}",
                     move.board, game.asString())
         }
     }

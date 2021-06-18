@@ -11,5 +11,16 @@ package games.gameOfFifteen
  * Thus the initial permutation should be correct.
  */
 fun isEven(permutation: List<Int>): Boolean {
-    TODO()
+    val invertedPairs = with (permutation) {
+        indices.asSequence()
+            .flatMap { i -> (1 until size).map { j -> Pair(i, j) } }
+            .filter { it.first < it.second }
+            .filter { get(it.first) > get(it.second) }
+    }
+
+    return invertedPairs
+        .count()
+        .isEven()
 }
+
+private fun Int.isEven(): Boolean = this % 2 == 0
